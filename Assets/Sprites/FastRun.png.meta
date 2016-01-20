@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 3263f96b920c76048a6b5627cb674858
+timeCreated: 1452793088
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: FastRun_0
+    21300002: FastRun_1
+    21300004: FastRun_2
+    21300006: FastRun_3
+    21300008: FastRun_4
+    21300010: FastRun_5
+    21300012: FastRun_6
+    21300014: FastRun_7
+    21300016: FastRun_8
+    21300018: FastRun_9
+    21300020: FastRun_10
+    21300022: FastRun_11
+    21300024: FastRun_12
+    21300026: FastRun_13
+    21300028: FastRun_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: FastRun_0
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 423
+        width: 353
+        height: 423
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_1
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 423
+        width: 353
+        height: 423
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_2
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 430
+        width: 358
+        height: 416
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_3
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 439
+        width: 378
+        height: 407
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_4
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 452
+        width: 395
+        height: 394
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_5
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 466
+        width: 412
+        height: 380
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_6
+      rect:
+        serializedVersion: 2
+        x: 2811
+        y: 482
+        width: 435
+        height: 364
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_7
+      rect:
+        serializedVersion: 2
+        x: 3261
+        y: 498
+        width: 444
+        height: 348
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_8
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 496
+        width: 446
+        height: 350
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_9
+      rect:
+        serializedVersion: 2
+        x: 4177
+        y: 477
+        width: 451
+        height: 369
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 37
+        width: 438
+        height: 383
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_11
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 22
+        width: 423
+        height: 399
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+    - name: FastRun_12
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 12
+        width: 401
+        height: 413
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_13
+      rect:
+        serializedVersion: 2
+        x: 1465
+        y: 3
+        width: 378
+        height: 422
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FastRun_14
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 0
+        width: 354
+        height: 425
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

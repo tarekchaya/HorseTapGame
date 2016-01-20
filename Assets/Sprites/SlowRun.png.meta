@@ -1,0 +1,386 @@
+fileFormatVersion: 2
+guid: adca6dd425776bf45a4e6ead23e5490d
+timeCreated: 1452741469
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SlowRun_0
+    21300002: SlowRun_1
+    21300004: SlowRun_2
+    21300006: SlowRun_3
+    21300008: SlowRun_4
+    21300010: SlowRun_5
+    21300012: SlowRun_6
+    21300014: SlowRun_7
+    21300016: SlowRun_8
+    21300018: SlowRun_9
+    21300020: SlowRun_10
+    21300022: SlowRun_11
+    21300024: SlowRun_12
+    21300026: SlowRun_13
+    21300028: SlowRun_14
+    21300030: SlowRun_15
+    21300032: SlowRun_16
+    21300034: SlowRun_17
+    21300036: SlowRun_18
+    21300038: SlowRun_19
+    21300040: SlowRun_20
+    21300042: SlowRun_21
+    21300044: SlowRun_22
+    21300046: SlowRun_23
+    21300048: SlowRun_24
+    21300050: SlowRun_25
+    21300052: SlowRun_26
+    21300054: SlowRun_27
+    21300056: SlowRun_28
+    21300058: SlowRun_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SlowRun_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 846
+        width: 351
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_1
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 844
+        width: 352
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_2
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 844
+        width: 352
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_3
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 845
+        width: 352
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_4
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 846
+        width: 352
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_5
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 846
+        width: 351
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_6
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 848
+        width: 354
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_7
+      rect:
+        serializedVersion: 2
+        x: 2954
+        y: 848
+        width: 360
+        height: 421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_8
+      rect:
+        serializedVersion: 2
+        x: 3361
+        y: 849
+        width: 366
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_9
+      rect:
+        serializedVersion: 2
+        x: 3769
+        y: 850
+        width: 371
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 427
+        width: 378
+        height: 419
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_11
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 429
+        width: 384
+        height: 417
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_12
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 429
+        width: 390
+        height: 416
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_13
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 431
+        width: 394
+        height: 414
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_14
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 431
+        width: 400
+        height: 415
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_15
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 433
+        width: 404
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_16
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 435
+        width: 411
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_17
+      rect:
+        serializedVersion: 2
+        x: 2908
+        y: 436
+        width: 406
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_18
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 438
+        width: 399
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_19
+      rect:
+        serializedVersion: 2
+        x: 3747
+        y: 440
+        width: 393
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_20
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 17
+        width: 388
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_21
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 19
+        width: 382
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_22
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 19
+        width: 376
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_23
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 17
+        width: 374
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_24
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 15
+        width: 366
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_25
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 9
+        width: 354
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_26
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 5
+        width: 352
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_27
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 1
+        width: 352
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_28
+      rect:
+        serializedVersion: 2
+        x: 3375
+        y: 0
+        width: 352
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SlowRun_29
+      rect:
+        serializedVersion: 2
+        x: 3789
+        y: 0
+        width: 351
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
