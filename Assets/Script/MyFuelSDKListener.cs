@@ -8,7 +8,7 @@ public class MyFuelSDKListener : FuelSDKListener {
 	public string TournamentID { get; set; }
 	public string MatchID { get; set; }
 
-	public MainMenuController mmc;
+	public PlayerController plyrContrl;
 
 	public override void OnCompeteUICompletedWithExit () 
 	{
@@ -77,7 +77,16 @@ public class MyFuelSDKListener : FuelSDKListener {
 		
 		// Play the game and pass any extracted match
 		// data as necessary.
-		mmc.StartTheGame();
+		plyrContrl.startMultiplayerGame();
+	}
+
+	public override void OnCompeteChallengeCount (int count)
+	{
+		if (count > 0) {
+			plyrContrl.ShowChallengeCount(count);
+		} else {
+			plyrContrl.HideChallengeCount();
+		}
 	}
 
 

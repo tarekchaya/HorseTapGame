@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject horseIdle;
 	public GameObject horseFast;
 	public GameObject hostgameobject;
+	public GameObject ChallengeCount;
 
 	public MyHostGameObject myhostGO;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour {
 	private UILabel _labelTimer;
 	private UILabel _labelCarrotAmount;
 	private UILabel _labelBestTime;
+	private UILabel _labelChallengeCount;
 	
 	[HideInInspector]
 	public float timer = 1f;
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 		_labelCarrotAmount = CarrotAmount.GetComponent<UILabel>();
 		_labelBestTime = BestTimeGO.GetComponent<UILabel>();
 		HorseButtColider = HorseButt.GetComponent<BoxCollider>();
+		_labelChallengeCount = ChallengeCount.GetComponent<UILabel>();
 		_horseHeadPos.value = 0f;
 		getHighScores ();
 		HorseButtColider.enabled = false;
@@ -94,7 +97,7 @@ public class PlayerController : MonoBehaviour {
 					horseFast.SetActive(false);
 					horseIdle.SetActive(true);
 
-
+					FuelSDK.SyncChallengeCounts ();
 					MainMenuGameObject.SetActive (true);
 				}
 			}
@@ -181,6 +184,19 @@ public class PlayerController : MonoBehaviour {
 		horseFast.SetActive(true);
 		GameStart = true;
 		
+	}
+
+	public void ShowChallengeCount (int count) {
+
+		ChallengeCount.SetActive (true);
+		_labelChallengeCount.text = "" + count;
+
+	}
+
+	public void HideChallengeCount () {
+
+		ChallengeCount.SetActive (false);
+
 	}
 	
 	IEnumerator carrotTime () {

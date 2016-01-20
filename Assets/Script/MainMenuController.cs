@@ -10,6 +10,8 @@ public class MainMenuController : MonoBehaviour {
 
 		//FuelSDK.SyncVirtualGoods();
 
+		FuelSDK.SyncChallengeCounts ();
+
 	}
 	
 	// Update is called once per frame
