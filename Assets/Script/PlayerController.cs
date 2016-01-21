@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject horseFast;
 	public GameObject hostgameobject;
 	public GameObject ChallengeCount;
+	public GameObject ChallengeCountLabel;
 
 	public MyHostGameObject myhostGO;
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour {
 		_labelCarrotAmount = CarrotAmount.GetComponent<UILabel>();
 		_labelBestTime = BestTimeGO.GetComponent<UILabel>();
 		HorseButtColider = HorseButt.GetComponent<BoxCollider>();
-		_labelChallengeCount = ChallengeCount.GetComponent<UILabel>();
+		_labelChallengeCount = ChallengeCountLabel.GetComponent<UILabel>();
 		_horseHeadPos.value = 0f;
 		getHighScores ();
 		HorseButtColider.enabled = false;
@@ -174,10 +175,15 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
+	public void LaunchFuelMultiplayer () {
+
+		myhostGO.LaunchFuel();
+
+	}
+
 	public void startMultiplayerGame () {
 
 		Multiplayer = true;
-		myhostGO.LaunchFuel();
 		MainMenuGameObject.SetActive (false);
 		finish = false;
 		horseIdle.SetActive(false);
