@@ -20,5 +20,6 @@ public class loadingSceneController : MonoBehaviour {
 		yield return new WaitForSeconds(5);
 		Application.LoadLevel(1);
 
+
 	}
 }

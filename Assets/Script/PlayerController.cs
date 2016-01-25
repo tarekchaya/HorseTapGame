@@ -83,7 +83,9 @@ public class PlayerController : MonoBehaviour {
 						long longRaceTime = Convert.ToInt64(timer *100);
 						string s=string.Format("{0:0.00}",timer);
 
-						getHostGameObjectClass().LaunchFuelWithScore(1000000-longRaceTime, s);
+						long ModifiedLongRaceTime = 100000 - longRaceTime;
+
+						getHostGameObjectClass().LaunchFuelWithScore(ModifiedLongRaceTime, s);
 						Multiplayer = false;
 						FuelSDK.SyncChallengeCounts ();
 					}
