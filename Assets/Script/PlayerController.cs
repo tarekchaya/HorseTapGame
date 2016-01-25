@@ -215,6 +215,12 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	public void RefreshChallengeCount () {
+		
+		FuelSDK.SyncChallengeCounts ();
+		
+	}
+
 	public void HideChallengeCount () {
 
 		ChallengeCount.SetActive (false);
