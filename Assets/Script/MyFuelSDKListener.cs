@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FuelSDKSimpleJSON;
@@ -7,8 +8,6 @@ public class MyFuelSDKListener : FuelSDKListener {
 
 	public string TournamentID { get; set; }
 	public string MatchID { get; set; }
-
-	public PlayerController plyrContrl;
 
 	public override void OnCompeteUICompletedWithExit () 
 	{
@@ -77,18 +76,30 @@ public class MyFuelSDKListener : FuelSDKListener {
 		
 		// Play the game and pass any extracted match
 		// data as necessary.
-		plyrContrl.startMultiplayerGame();
+		PlayerControllerClass().startMultiplayerGame();
 	}
 
 	public override void OnCompeteChallengeCount (int count)
 	{
 		if (count > 0) {
-			plyrContrl.ShowChallengeCount(count);
+			PlayerControllerClass().ShowChallengeCount(count);
 		} else {
-			plyrContrl.HideChallengeCount();
+			PlayerControllerClass().HideChallengeCount();
 		}
 	}
 
+	static public PlayerController PlayerControllerClass()
+	{
+		GameObject _PlayerControllerHandler = GameObject.Find("PlayerController");
+		if (_PlayerControllerHandler != null) {
+			PlayerController _PlayerControllerScript = _PlayerControllerHandler.GetComponent<PlayerController> ();
+			if(_PlayerControllerScript != null) {
+				return _PlayerControllerScript;
+			}
+			throw new Exception();
+		}
+		throw new Exception();
+	}
 
 
 }

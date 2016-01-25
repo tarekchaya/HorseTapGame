@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject ChallengeCount;
 	public GameObject ChallengeCountLabel;
 
-	public MyHostGameObject myhostGO;
+	//public MyHostGameObject myhostGO;
 
 	private UISlider _horseHeadPos;
 	private UILabel _labelTimer;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
 	[HideInInspector]
 	public float HorseHitNumber = 0;
-	private bool carrotHappiness = false;
+	//private bool carrotHappiness = false;
 	private float carrotWaitTime = 5f;
 	private float carrotAmount = 1f;
 
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 		getHighScores ();
 		HorseButtColider.enabled = false;
 
-		myhostGO = hostgameobject.GetComponent<MyHostGameObject>();
+		FuelSDK.SyncChallengeCounts ();
 	
 	}
 
@@ -83,7 +83,9 @@ public class PlayerController : MonoBehaviour {
 						long longRaceTime = Convert.ToInt64(timer *100);
 						string s=string.Format("{0:0.00}",timer);
 
-						myhostGO.LaunchFuelWithScore(longRaceTime, s);
+						getHostGameObjectClass().LaunchFuelWithScore(1000000-longRaceTime, s);
+						Multiplayer = false;
+						FuelSDK.SyncChallengeCounts ();
 					}
 
 					carrotAmount ++;
@@ -98,7 +100,6 @@ public class PlayerController : MonoBehaviour {
 					horseFast.SetActive(false);
 					horseIdle.SetActive(true);
 
-					FuelSDK.SyncChallengeCounts ();
 					MainMenuGameObject.SetActive (true);
 				}
 			}
@@ -118,6 +119,19 @@ public class PlayerController : MonoBehaviour {
 
 		}
 
+	}
+
+	static public MyHostGameObject getHostGameObjectClass()
+	{
+		GameObject _MyHostGameObjectHandler = GameObject.Find("MyHostGameObject");
+		if (_MyHostGameObjectHandler != null) {
+			MyHostGameObject _MyHostGameObjectScript = _MyHostGameObjectHandler.GetComponent<MyHostGameObject> ();
+			if(_MyHostGameObjectScript != null) {
+				return _MyHostGameObjectScript;
+			}
+			throw new Exception();
+		}
+		throw new Exception();
 	}
 
 	public void ShowHorseHit () {
@@ -177,7 +191,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void LaunchFuelMultiplayer () {
 
-		myhostGO.LaunchFuel();
+		getHostGameObjectClass().LaunchFuel();
 
 	}
 
@@ -207,10 +221,10 @@ public class PlayerController : MonoBehaviour {
 	
 	IEnumerator carrotTime () {
 
-		carrotHappiness = true;
+		//carrotHappiness = true;
 		carrotAmount --;
 		yield return new WaitForSeconds(carrotWaitTime);
-		carrotHappiness = false;
+		//carrotHappiness = false;
 
 	}
 
