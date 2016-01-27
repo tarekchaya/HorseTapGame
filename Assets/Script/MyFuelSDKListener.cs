@@ -88,6 +88,50 @@ public class MyFuelSDKListener : FuelSDKListener {
 		}
 	}
 
+	public override void OnVirtualGoodList (string transactionID, List<object> virtualGoods)
+	{
+		bool inventoryUpdated = true;
+		
+		// Update the player's local (and/or remote) virtual goods inventory.
+		foreach( GameObject Carrot in virtualGoods )
+		{
+			PlayerControllerClass().AddVirtualGoods();
+		}
+
+		// Acknowledge the receipt of the virtual goods list.
+		FuelSDK.AcknowledgeVirtualGoods(transactionID, inventoryUpdated);
+		
+		if (inventoryUpdated) {
+			// Notify the user of awarded virtual goods.
+
+			foreach( GameObject Carrot in virtualGoods )
+			{
+				PlayerControllerClass().ShowVirtualGoodBoard();
+			}
+
+
+			// If an unknown or unsupported virtual good ID is encountered,
+			// then prompt the user to update their game to the latest
+			// version in order to use that virtual good.
+		} else {
+			// Undo update to the player's local (and/or remote) virtual
+			// goods inventory.
+
+			foreach( GameObject Carrot in virtualGoods )
+			{
+				PlayerControllerClass().RemoveVirtualGoods();
+			}
+
+		}
+	}
+
+	public override void OnVirtualGoodRollback (string transactionID)
+	{
+		// revert the player's local (and/or remote) virtual goods inventory
+		// by comparing the given transaction ID against the cached received
+		// virtual good lists
+	}
+
 	static public PlayerController PlayerControllerClass()
 	{
 		GameObject _PlayerControllerHandler = GameObject.Find("PlayerController");

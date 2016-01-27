@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public GameObject hostgameobject;
 	public GameObject ChallengeCount;
 	public GameObject ChallengeCountLabel;
+	public GameObject VirtualGoodsMessage;
 
 	//public MyHostGameObject myhostGO;
 
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour {
 		HorseButtColider.enabled = false;
 
 		FuelSDK.SyncChallengeCounts ();
+		FuelSDK.SyncVirtualGoods();
 	
 	}
 
@@ -87,7 +89,6 @@ public class PlayerController : MonoBehaviour {
 
 						getHostGameObjectClass().LaunchFuelWithScore(ModifiedLongRaceTime, s);
 						Multiplayer = false;
-						FuelSDK.SyncChallengeCounts ();
 					}
 
 					carrotAmount ++;
@@ -118,6 +119,10 @@ public class PlayerController : MonoBehaviour {
 			if (_horseHeadPos.value < 1f) {
 				timer += Time.deltaTime;
 			}
+
+
+			FuelSDK.SyncChallengeCounts ();
+			FuelSDK.SyncVirtualGoods();
 
 		}
 
@@ -216,15 +221,39 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void RefreshChallengeCount () {
-		
+
 		FuelSDK.SyncChallengeCounts ();
-		
+		FuelSDK.SyncVirtualGoods();
 	}
 
 	public void HideChallengeCount () {
 
 		ChallengeCount.SetActive (false);
 
+	}
+
+	public void AddVirtualGoods () {
+
+		carrotAmount += 100f;
+
+	}
+
+	public void RemoveVirtualGoods () {
+
+		carrotAmount -= 100f;
+
+	}
+
+	public void ShowVirtualGoodBoard () {
+
+		VirtualGoodsMessage.SetActive (true);
+
+	}
+
+	public void HideVirtualGoodBoard () {
+		
+		
+		VirtualGoodsMessage.SetActive (false);
 	}
 	
 	IEnumerator carrotTime () {
