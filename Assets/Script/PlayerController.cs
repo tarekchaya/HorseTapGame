@@ -234,6 +234,8 @@ public class PlayerController : MonoBehaviour {
 		FuelSDK.SyncChallengeCounts ();
 		FuelSDK.SyncVirtualGoods();
 		FuelSDK.SyncTournamentInfo ();
+		setHighScores();
+		getHighScores();
 	}
 
 	public void HideChallengeCount () {
