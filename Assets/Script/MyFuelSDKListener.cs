@@ -90,37 +90,47 @@ public class MyFuelSDKListener : FuelSDKListener {
 
 	public override void OnVirtualGoodList (string transactionID, List<object> virtualGoods)
 	{
-		bool inventoryUpdated = true;
+
+		bool consumed = true;
 		
-		// Update the player's local (and/or remote) virtual goods inventory.
-		foreach( GameObject Carrot in virtualGoods )
-		{
-			PlayerControllerClass().AddVirtualGoods();
-		}
+		foreach (object virtualGoodObject in virtualGoods) {
+			Dictionary<string, object> virtualGood = virtualGoodObject as Dictionary<string, object>;
+			
+			if (virtualGood == null) {
+				Debug.Log ("OnVirtualGoodList - invalid virtual good data type: " + virtualGoodObject.GetType ().Name);
+				consumed = false;
+				break;
+			}
+			
+			object goodIDObject = virtualGood["goodId"];
+			
+			if (goodIDObject == null) {
+				Debug.Log ("OnVirtualGoodList - missing expected virtual good ID");
+				consumed = false;
+				break;
+			}
+			
+			if (!(goodIDObject is string)) {
+				Debug.Log ("OnVirtualGoodList - invalid virtual good ID data type: " + goodIDObject.GetType ().Name);
+				consumed = false;
+				break;
+			}
+			
+			string goodID = (string)goodIDObject;
 
-		// Acknowledge the receipt of the virtual goods list.
-		FuelSDK.AcknowledgeVirtualGoods(transactionID, inventoryUpdated);
+			PlayerControllerClass().AddVirtualGoods(goodID);
+
+			if (consumed) {
+				
+				PlayerControllerClass().ShowVirtualGoodBoard(goodID);
+				
+			} else {
+
+				PlayerControllerClass().RemoveVirtualGoods(goodID);
+
+			}
 		
-		if (inventoryUpdated) {
-			// Notify the user of awarded virtual goods.
-
-			foreach( GameObject Carrot in virtualGoods )
-			{
-				PlayerControllerClass().ShowVirtualGoodBoard();
-			}
-
-
-			// If an unknown or unsupported virtual good ID is encountered,
-			// then prompt the user to update their game to the latest
-			// version in order to use that virtual good.
-		} else {
-			// Undo update to the player's local (and/or remote) virtual
-			// goods inventory.
-
-			foreach( GameObject Carrot in virtualGoods )
-			{
-				PlayerControllerClass().RemoveVirtualGoods();
-			}
+		FuelSDK.AcknowledgeVirtualGoods(transactionID, consumed);
 
 		}
 	}
@@ -130,6 +140,29 @@ public class MyFuelSDKListener : FuelSDKListener {
 		// revert the player's local (and/or remote) virtual goods inventory
 		// by comparing the given transaction ID against the cached received
 		// virtual good lists
+	}
+
+	public void OnCompeteTournamentInfo (Dictionary<string, string> tournamentInfo)
+	{
+		if ((tournamentInfo == null) || (tournamentInfo.Count == 0)) {
+			// There is no tournament currently running or scheduled.
+			string goodID = "Carrot";
+			PlayerControllerClass().ShowVirtualGoodBoard(goodID);
+			PlayerControllerClass().ShowMultiplayerButton();
+		} else {
+			// A tournament is currently running or is the
+			// information for the next scheduled tournament.
+			
+			// Extract the tournament data.
+			string name = tournamentInfo["name"];
+			string campaignName = tournamentInfo["campaignName"];
+			string sponsorName = tournamentInfo["sponsorName"];
+			string startDate = tournamentInfo["startDate"];
+			string endDate = tournamentInfo["endDate"];
+			string logo = tournamentInfo["logo"];
+			
+			PlayerControllerClass().ShowTournamentButton();
+		}
 	}
 
 	static public PlayerController PlayerControllerClass()
