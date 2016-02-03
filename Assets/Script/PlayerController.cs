@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour {
 
 	private BoxCollider HorseButtColider;
 
+	public GameObject tournamentTestThing;
+	private UILabel _Tournamentthing;
+	public bool tournament = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -73,11 +77,19 @@ public class PlayerController : MonoBehaviour {
 		FuelSDK.SyncChallengeCounts ();
 		FuelSDK.SyncVirtualGoods();
 		FuelSDK.SyncTournamentInfo ();
+
+		_Tournamentthing = tournamentTestThing.GetComponent<UILabel>();
 	
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (tournament == true) {
+			_Tournamentthing.text = "Tournamentthingie";
+		} else {
+			_Tournamentthing.text = "RegularMulti";
+		}
 
 		_labelCarrotAmount.text = "" + carrotAmount;
 		_labelSugarAmount.text = "" + sugarAmount;

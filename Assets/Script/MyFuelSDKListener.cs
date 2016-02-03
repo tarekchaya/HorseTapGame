@@ -149,6 +149,7 @@ public class MyFuelSDKListener : FuelSDKListener {
 			string goodID = "Carrot";
 			PlayerControllerClass().ShowVirtualGoodBoard(goodID);
 			PlayerControllerClass().ShowMultiplayerButton();
+			PlayerControllerClass().tournament = false;
 		} else {
 			// A tournament is currently running or is the
 			// information for the next scheduled tournament.
@@ -160,6 +161,8 @@ public class MyFuelSDKListener : FuelSDKListener {
 			string startDate = tournamentInfo["startDate"];
 			string endDate = tournamentInfo["endDate"];
 			string logo = tournamentInfo["logo"];
+
+			PlayerControllerClass().tournament = true;
 			
 			PlayerControllerClass().ShowTournamentButton();
 		}
