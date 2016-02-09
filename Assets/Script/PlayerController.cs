@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using FuelSDKSimpleJSON;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-	
+
 	public GameObject HorseHead;
 	public GameObject Timer;
 	public GameObject HorseButt;
@@ -55,10 +57,6 @@ public class PlayerController : MonoBehaviour {
 
 	private BoxCollider HorseButtColider;
 
-	public GameObject tournamentTestThing;
-	private UILabel _Tournamentthing;
-	public bool tournament = false;
-
 	// Use this for initialization
 	void Start () {
 
@@ -77,19 +75,11 @@ public class PlayerController : MonoBehaviour {
 		FuelSDK.SyncChallengeCounts ();
 		FuelSDK.SyncVirtualGoods();
 		FuelSDK.SyncTournamentInfo ();
-
-		_Tournamentthing = tournamentTestThing.GetComponent<UILabel>();
 	
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-		if (tournament == true) {
-			_Tournamentthing.text = "Tournamentthingie";
-		} else {
-			_Tournamentthing.text = "RegularMulti";
-		}
 
 		_labelCarrotAmount.text = "" + carrotAmount;
 		_labelSugarAmount.text = "" + sugarAmount;
@@ -107,10 +97,11 @@ public class PlayerController : MonoBehaviour {
 			if (HorseHitNumber == 100) {
 				if (finish == false) {
 
+					long longRaceTime = Convert.ToInt64(timer *100);
+					long ModifiedLongRaceTime = 100000 - longRaceTime;
+
 					if (Multiplayer == true) {	
-						long longRaceTime = Convert.ToInt64(timer *100);
 						string s=string.Format("{0:0.00}",timer);
-						long ModifiedLongRaceTime = 100000 - longRaceTime;
 						getHostGameObjectClass().LaunchFuelWithScore(ModifiedLongRaceTime, s);
 						Multiplayer = false;
 					}
@@ -127,6 +118,7 @@ public class PlayerController : MonoBehaviour {
 					horseFast.SetActive(false);
 					horseIdle.SetActive(true);
 					MainMenuGameObject.SetActive (true);
+					SendProgress(1);
 				}
 			}
 
@@ -243,6 +235,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void RefreshChallengeCount () {
 
+		GetEvents();
 		FuelSDK.SyncChallengeCounts ();
 		FuelSDK.SyncVirtualGoods();
 		FuelSDK.SyncTournamentInfo ();
@@ -326,5 +319,37 @@ public class PlayerController : MonoBehaviour {
 		multiplayerButton.SetActive(false);
 		tournamentButton.SetActive(true);
 	}
+
+	public void GetEvents() {
+		List<object> tags = new List<object>();
+		tags.Add("blitzMode");
+		bool success = FuelSDK.GetEvents(tags);
+		if(success == true) {
+			//Everything is good you can expect your data in the event callback
+
+		}
+	}
+	
+	public void SendProgress (int score) {
+		
+		Dictionary<string,int> scoreDict = new Dictionary<string, int>();
+		scoreDict.Add("value",score);
+		
+		Dictionary<string,object> progressDict = new Dictionary<string, object>();
+		progressDict.Add("score", scoreDict);
+		
+		List<object> tags = null;//new List<object>();
+		tags.Add("blitzMode");
+		
+		List<object> methodParams = new List<object>();
+		methodParams.Add( progressDict );
+		bool success = FuelSDK.ExecMethod("SendProgress", methodParams);
+		if(success == true) {
+			//Your progress has been successfully updated
+		}
+	}
+
+
+
 
 }
