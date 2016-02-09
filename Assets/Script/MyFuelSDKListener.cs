@@ -375,8 +375,7 @@ public class MyFuelSDKListener : FuelSDKListener {
 				
 				if( ruleDict.ContainsKey("id") ) {
 					string Id = Convert.ToString( ruleDict["id"] );
-					IgniteDebugClass()._id.text = "" + Id;
-					Debug.Log("The mission ID is: " + Id);
+					IgniteDebugClass()._id.text = Id;
 				}
 				if( ruleDict.ContainsKey("score") ) {
 					int Score = Convert.ToInt32( ruleDict["score"] );
@@ -388,12 +387,11 @@ public class MyFuelSDKListener : FuelSDKListener {
 				}
 				if( ruleDict.ContainsKey("achieved") ) {
 					bool Achieved = Convert.ToBoolean( ruleDict["achieved"] );
-					IgniteDebugClass()._id.text = "" + Achieved;
+					IgniteDebugClass()._achieved.text = "" + Achieved;
 				}
 				if( ruleDict.ContainsKey("variable") ) {
 					string Variable = Convert.ToString( ruleDict["variable"] );
-					IgniteDebugClass()._variable.text = "" + Variable;
-					Debug.Log("The mission Variable is: " + Variable);
+					IgniteDebugClass()._variable.text = Variable;
 				}
 				if( ruleDict.ContainsKey("kind") ) {
 					string Kind = Convert.ToString( ruleDict["kind"] );

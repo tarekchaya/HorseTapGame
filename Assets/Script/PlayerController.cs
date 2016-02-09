@@ -118,7 +118,8 @@ public class PlayerController : MonoBehaviour {
 					horseFast.SetActive(false);
 					horseIdle.SetActive(true);
 					MainMenuGameObject.SetActive (true);
-					SendProgress(1);
+					int score = 1;
+					SendProgress(score);
 				}
 			}
 
@@ -322,8 +323,8 @@ public class PlayerController : MonoBehaviour {
 
 	public void GetEvents() {
 		List<object> tags = new List<object>();
-		tags.Add("blitzMode");
-		bool success = FuelSDK.GetEvents(null);
+		tags.Add("5times");
+		bool success = FuelSDK.GetEvents(tags);
 		if(success == true) {
 			//Everything is good you can expect your data in the event callback
 
@@ -331,6 +332,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	public void SendProgress (int score) {
+
 		
 		Dictionary<string,int> scoreDict = new Dictionary<string, int>();
 		scoreDict.Add("value",score);
@@ -339,14 +341,16 @@ public class PlayerController : MonoBehaviour {
 		progressDict.Add("NumberOfRaces", scoreDict);
 		
 		List<object> tags = null;//new List<object>();
-		tags.Add("blitzMode");
+		tags.Add("5times");
 		
 		List<object> methodParams = new List<object>();
 		methodParams.Add( progressDict );
+		methodParams.Add( tags );
 		bool success = FuelSDK.ExecMethod("SendProgress", methodParams);
 		if(success == true) {
 			//Your progress has been successfully updated
 		}
+		Debug.Log("SendProgress bool is :" + success);
 	}
 
 
