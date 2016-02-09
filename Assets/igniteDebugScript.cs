@@ -7,6 +7,7 @@ public class igniteDebugScript : MonoBehaviour {
 	public GameObject score;
 	public GameObject target;
 	public GameObject achieved;
+	public GameObject variable;
 
 	[HideInInspector]
 	public UILabel _id;
@@ -16,6 +17,8 @@ public class igniteDebugScript : MonoBehaviour {
 	public UILabel _target;
 	[HideInInspector]
 	public UILabel _achieved;
+	[HideInInspector]
+	public UILabel _variable;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +27,7 @@ public class igniteDebugScript : MonoBehaviour {
 		_score = score.GetComponent<UILabel>();
 		_target = target.GetComponent<UILabel>();
 		_achieved = achieved.GetComponent<UILabel>();
+		_variable = variable.GetComponent<UILabel>();
 	
 	}
 	

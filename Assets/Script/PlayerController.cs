@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
 	private UILabel _labelChallengeCount;
 	
 	[HideInInspector]
-	public float timer = 1f;
+	public float timer = 0f;
 	[HideInInspector]
 	public float BestTime =0f;
 
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 			_labelTimer.text = ""+ (Mathf.Round(timer * 100) / 100 ) + " sec";
 
 			//Sets status text
-			if (HorseHitNumber == 100) {
+			if (HorseHitNumber >= 100) {
 				if (finish == false) {
 
 					long longRaceTime = Convert.ToInt64(timer *100);
@@ -323,7 +323,7 @@ public class PlayerController : MonoBehaviour {
 	public void GetEvents() {
 		List<object> tags = new List<object>();
 		tags.Add("blitzMode");
-		bool success = FuelSDK.GetEvents(tags);
+		bool success = FuelSDK.GetEvents(null);
 		if(success == true) {
 			//Everything is good you can expect your data in the event callback
 
@@ -336,7 +336,7 @@ public class PlayerController : MonoBehaviour {
 		scoreDict.Add("value",score);
 		
 		Dictionary<string,object> progressDict = new Dictionary<string, object>();
-		progressDict.Add("score", scoreDict);
+		progressDict.Add("NumberOfRaces", scoreDict);
 		
 		List<object> tags = null;//new List<object>();
 		tags.Add("blitzMode");
