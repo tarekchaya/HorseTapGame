@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour {
 
 	private BoxCollider HorseButtColider;
 
+	private int score = 1;
+
 	// Use this for initialization
 	void Start () {
 
@@ -118,8 +120,11 @@ public class PlayerController : MonoBehaviour {
 					horseFast.SetActive(false);
 					horseIdle.SetActive(true);
 					MainMenuGameObject.SetActive (true);
-					int score = 1;
 					SendProgress(score);
+
+					FuelSDK.SyncChallengeCounts ();
+					FuelSDK.SyncVirtualGoods();
+					FuelSDK.SyncTournamentInfo ();
 				}
 			}
 
@@ -136,13 +141,23 @@ public class PlayerController : MonoBehaviour {
 				timer += Time.deltaTime;
 			}
 
-			FuelSDK.SyncChallengeCounts ();
-			FuelSDK.SyncVirtualGoods();
-			FuelSDK.SyncTournamentInfo ();
-
 		}
 
 	}
+
+	static public igniteDebugScript IgniteDebugClass()
+	{
+		GameObject _IgniteDebugHandler = GameObject.Find("QuestUI");
+		if (_IgniteDebugHandler != null) {
+			igniteDebugScript _IgniteDebugScript = _IgniteDebugHandler.GetComponent<igniteDebugScript> ();
+			if(_IgniteDebugScript != null) {
+				return _IgniteDebugScript;
+			}
+			throw new Exception();
+		}
+		throw new Exception();
+	}
+
 
 	static public MyHostGameObject getHostGameObjectClass()
 	{
@@ -328,6 +343,8 @@ public class PlayerController : MonoBehaviour {
 		if(success == true) {
 			//Everything is good you can expect your data in the event callback
 
+		} else {
+			IgniteDebugClass()._id.text = "No missions currently!";
 		}
 	}
 	
@@ -340,7 +357,7 @@ public class PlayerController : MonoBehaviour {
 		Dictionary<string,object> progressDict = new Dictionary<string, object>();
 		progressDict.Add("NumberOfRaces", scoreDict);
 		
-		List<object> tags = null;//new List<object>();
+		List<object> tags = new List<object>();
 		tags.Add("5times");
 		
 		List<object> methodParams = new List<object>();
@@ -350,7 +367,6 @@ public class PlayerController : MonoBehaviour {
 		if(success == true) {
 			//Your progress has been successfully updated
 		}
-		Debug.Log("SendProgress bool is :" + success);
 	}
 
 
